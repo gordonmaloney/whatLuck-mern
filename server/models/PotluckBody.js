@@ -5,7 +5,10 @@ const postSchema = mongoose.Schema({
     potluckTheme: String,
     potluckHost: String,
     essentials: [String],
-    replies: [String]
+    replies: {
+        bringer: String,
+        bringing: [String]
+    }
 });
 
 const PotluckBody = mongoose.model('PotluckBody', postSchema)

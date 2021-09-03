@@ -26,7 +26,8 @@ export const updatePotluck = (id, post) => async (dispatch) => {
   try {
     const { data } = await api.updatePotluck(id, post);
 
-    console.log("working")
+    console.log("working", post)
+
     dispatch({ type: "UPDATE", payload: data });
   } catch (error) {
     console.log(error);
