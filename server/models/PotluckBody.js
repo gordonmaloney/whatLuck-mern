@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const postSchema = mongoose.Schema({
-    title: String,
-    theme: String,
-    host: String,
+    potluckTitle: String,
+    potluckTheme: String,
+    potluckHost: String,
     essentials: [String]
 });
 

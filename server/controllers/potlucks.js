@@ -24,7 +24,6 @@ export const createPotluck = async (req, res) => {
 
         console.log("controler", potluck)
 
-
         res.status(201).json(newPotluck)
     } catch (error) {
         res.status(409).json({message: error})

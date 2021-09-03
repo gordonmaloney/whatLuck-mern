@@ -1,10 +1,10 @@
-export default (posts = [], action) => {
+export default (potlucks = [], action) => {
     switch(action.type) {
         case 'FETCH_ALL':
             return action.payload;
         case 'CREATE':
-            return [ ...posts, action.payload];
+            return [ ...potlucks, action.payload];
         default:
-            return posts;
+            return potlucks;
     }
 }
