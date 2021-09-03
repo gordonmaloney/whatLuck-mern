@@ -5,13 +5,11 @@ import { useDispatch } from "react-redux";
 import { createPotluck } from "../actions/potlucks";
 
 const CreatePotluck = () => {
-  //replies needs to be being passed as an ARRAY, not an OBJECT - otherwise it breaks when you try to add replies - can't work out why it's not working
   const [potluckData, setPotluckData] = useState({
     potluckHost: "",
     potluckTitle: "",
     potluckTheme: "",
-    essentials: "",
-    replies: { bringer: "", bringing: [""] },
+    essentials: ""
   });
 
   const dispatch = useDispatch();

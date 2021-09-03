@@ -3,6 +3,20 @@ import Bringing from './Bringing'
 
 const Potluck = ({ potluck }) => {
   
+const Reply = () => {
+  return (
+    <>
+    {potluck.replies.map((reply) => {
+          return (
+            <>
+              <p>{reply.bringer} is bringing {reply.bringing}</p>
+            </>
+          );
+        })}
+    </>
+  )
+}
+
   return (
     <>
         <h1>{potluck.potluckTitle}</h1>:
@@ -25,6 +39,7 @@ const Potluck = ({ potluck }) => {
         })}
       </li>
 
+      <Reply />
       <Bringing potluck={potluck}/>
     </>
   );
