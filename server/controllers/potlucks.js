@@ -29,3 +29,14 @@ export const createPotluck = async (req, res) => {
         res.status(409).json({message: error})
     }
 }
+
+export const updatePotluck = async (req, res) => {
+    const { id: _id } = req.params;
+    const post = req.body;
+
+    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that ID');
+    
+    const updatedPotluck = await PotluckBody.findByIdAndUpdate(_id, { ...potluck, _id}, { new: true })
+
+    res.json(updatedPotluck);
+}

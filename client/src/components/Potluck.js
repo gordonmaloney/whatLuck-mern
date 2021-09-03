@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import Bringing from './Bringing'
 
 const Potluck = ({ potluck }) => {
+  
   return (
     <>
         <h1>{potluck.potluckTitle}</h1>:
@@ -22,6 +24,8 @@ const Potluck = ({ potluck }) => {
           );
         })}
       </li>
+
+      <Bringing potluck={potluck}/>
     </>
   );
 };
