@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import MainMenu from "./components/mainmenu";
+import MainMenu from "./components/MainMenu";
 import { useDispatch } from "react-redux";
-
 import { getPotlucks } from "./actions/potlucks";
 
 const App = () => {
@@ -12,9 +11,9 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      <MainMenu />
-    </>
+    
+        <MainMenu />
+    
   );
 };
 

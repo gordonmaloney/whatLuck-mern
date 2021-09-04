@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 import { createPotluck } from "../actions/potlucks";
 import randomWords from 'random-words'
 
 const CreatePotluck = () => {
-
   const [potluckData, setPotluckData] = useState({
     potluckHost: "",
     potluckTitle: "",
@@ -19,8 +19,9 @@ const CreatePotluck = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(createPotluck(potluckData));
+    console.log(`success! click here to see your potluck: http://localhost:3000/potlucks/${potluckData.idCode}`)
+    window.location.href = `/potlucks/${potluckData.idCode}`
   };
 
   return (

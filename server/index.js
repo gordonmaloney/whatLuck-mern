@@ -13,6 +13,9 @@ app.use(cors());
 
 app.use('/potlucks', potluckRoutes)
 
+app.get('/', (req, res) => {
+    res.send('whatLuck API running')
+})
 
 const CONNECTION_URL = 'mongodb+srv://gordon:gordon123@cluster0.a8rai.mongodb.net/whatLuck?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5001;
