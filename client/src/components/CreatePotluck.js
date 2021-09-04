@@ -3,13 +3,16 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
 import { createPotluck } from "../actions/potlucks";
+import randomWords from 'random-words'
 
 const CreatePotluck = () => {
+
   const [potluckData, setPotluckData] = useState({
     potluckHost: "",
     potluckTitle: "",
     potluckTheme: "",
-    essentials: ""
+    essentials: "",
+    idCode: randomWords(4).join('-')
   });
 
   const dispatch = useDispatch();

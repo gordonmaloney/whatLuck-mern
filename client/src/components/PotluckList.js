@@ -5,7 +5,6 @@ import { CircularProgress } from "@material-ui/core";
 
 const PotluckList = () => {
   const potlucks = useSelector((state) => state.potlucks);
-  console.log("test", potlucks);
 
   return !potlucks.length ? (
     <CircularProgress />
