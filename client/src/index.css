@@ -16,6 +16,9 @@ code {
     monospace;
 }
 
+.subHeader {
+  padding-top: 20px;
+}
 
 
 .appbar-logo {
@@ -65,10 +68,6 @@ code {
   background-color: grey;
 }
 
-.break-me {
-  color: red
-}
-
 .navbar {
   background-color: #2b2eff;
   color: white;
@@ -98,4 +97,57 @@ code {
 #homeLogo {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.potluck-card {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.potluck-card-body {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+.bringing-reply-card {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px
+}
+
+
+@media only screen and (max-width: 700px) {
+  .bringing-reply-card {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+.create-potluck-card {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px
+}
+
+@media only screen and (max-width: 700px) {
+  .create-potluck-card {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+.navbar-btn {
+  margin-right: 10px;
+  color: white
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-btn {
+    margin-top: 10px;
+    width: 90%;
+  }
 }

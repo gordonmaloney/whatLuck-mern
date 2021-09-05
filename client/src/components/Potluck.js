@@ -33,8 +33,12 @@ const Reply = () => {
 }
 
   return (
-    <>
+    <Card className="potluck-card">
+      <CardHeader>
         <h1><Link to={`potlucks/${potluck.idCode}`}>{potluck.potluckTitle}</Link></h1>
+      </CardHeader>
+      <CardBody className="potluck-card-body">
+
       <li>
 <b>Theme: </b> {potluck.potluckTheme}
       </li>
@@ -54,10 +58,12 @@ const Reply = () => {
           );
         })}
       </li>
+      
       <Row>
         <Reply />
       </Row>
-    </>
+      </CardBody>
+    </Card>
   );
 };
 

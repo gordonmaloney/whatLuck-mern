@@ -3,10 +3,15 @@
 //reverse order of potluck list
 //format "bringing" components in cool tiles or something
 //add home page
+//format forms
+//format displays
+//make create form nicer
+//make menu buttons
 
 
+
+bring back crazy tags??
+make public/private option
 set up color scheme (sass?)
-format displays
-make create form nicer
 add delete function - admin only
 redeploy

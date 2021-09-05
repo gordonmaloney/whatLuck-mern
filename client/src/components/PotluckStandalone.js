@@ -46,9 +46,13 @@ const PotluckStandalone = (props) => {
     <CircularProgress />
   ) : (
     <>
+        <Card className="potluck-card">
+      <CardHeader>
       <h1>{potluck.potluckTitle}</h1>
+      </CardHeader>
+      <CardBody className="potluck-card-body">
       <p>
-        Your unique potluck id is: <Link to={potluck.idCode}>{potluck.idCode}</Link> 
+        <em>Your unique potluck id is: <Link to={potluck.idCode}>{potluck.idCode}</Link></em>
         {" "}
         <Button size="sm" onClick={() => {navigator.clipboard.writeText(window.location.href)}}>
           Copy Link
@@ -77,7 +81,9 @@ const PotluckStandalone = (props) => {
         <Row>
           <Reply />
         </Row>
+</CardBody>
 
+</Card>
       <Bringing potluck={potluck} />
     </>
   );

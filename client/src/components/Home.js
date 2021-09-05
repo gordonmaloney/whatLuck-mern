@@ -20,7 +20,7 @@ export default function Home() {
                     Simply <Link to="/createpotluck">Create a Potluck</Link>, fill in the details, and share it with your friends. It is <em>that</em> easy.
                 </p>
                 <p>
-                    No more barbeques ruined by everyone bringing buns. No more hundred tubs of hummous. No more thousand ten thousand spoons when all you need is a knife.
+                    No more barbeques ruined by everyone bringing buns. No more hundred tubs of hummous. No more ten thousand spoons when all you need is a knife.
                 </p>
             </div>
         </div>
