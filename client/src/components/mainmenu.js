@@ -15,9 +15,10 @@ function MainMenu() {
 
   return (
     <BrowserRouter>
+            <NavbarComponent />
+
       <Container>
 
-        <NavbarComponent />
      
 
         <Switch>

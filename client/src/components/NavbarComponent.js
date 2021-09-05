@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -23,17 +24,23 @@ export default function NavbarComponent() {
         <Nav className="mr-auto" navbar>
           <NavItem>
             <Button outline color="primary" className="navbar-btn">
-              <NavLink href="/">Home</NavLink>
+              <Link to="/">
+                <NavLink>Home</NavLink>
+                </Link>
             </Button>
           </NavItem>
           <NavItem>
             <Button outline color="primary" className="navbar-btn">
-              <NavLink href="/createpotluck">Create a potluck</NavLink>
+              <Link to="/createpotluck">
+              <NavLink>Create a potluck</NavLink>
+              </Link>
             </Button>
           </NavItem>
           <NavItem>
             <Button outline color="primary" className="navbar-btn">
-              <NavLink href="/Potlucklist">All potlucks</NavLink>
+              <Link to="/Potlucklist">
+                <NavLink>All potlucks</NavLink>
+                </Link>
             </Button>
           </NavItem>
         </Nav>
