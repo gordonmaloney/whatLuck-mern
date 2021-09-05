@@ -1,10 +1,13 @@
-make responsive for mobile
+//pagination
+//make menu and images responsive for mobile
+//reverse order of potluck list
+
+
 set up color scheme (sass?)
-reverse order of potluck list
 format displays
 add home page
 make create form nicer
 add static footer
 format "bringing" components in cool tiles or something
-
 add delete function - admin only
+redeploy
