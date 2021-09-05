@@ -12,7 +12,7 @@ const CreatePotluck = () => {
     potluckTitle: "",
     potluckTheme: "",
     essentials: "",
-    idCode: randomWords(4).join('-')
+    idCode: randomWords(3).join('-')
   });
 
   const dispatch = useDispatch();

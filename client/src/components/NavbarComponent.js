@@ -21,8 +21,8 @@ export default function NavbarComponent() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md" className="ps-3" >
+
+      <Navbar dark expand="md" sticky="top" className="ps-3 navbar" >
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -43,6 +43,6 @@ export default function NavbarComponent() {
         </Collapse>
         <NavbarBrand href="/"><img src={logo} className="appbar-logo" /></NavbarBrand>
       </Navbar>
-    </div>
+
   );
 }

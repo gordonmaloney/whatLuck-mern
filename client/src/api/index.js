@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5001/potlucks';
-//const url = 'https://whatluck.herokuapp.com/potlucks';
+//const url = 'http://localhost:5001/potlucks';
+const url = 'https://whatluck.herokuapp.com/potlucks';
 
 
 export const fetchPotlucks = () => axios.get(url);

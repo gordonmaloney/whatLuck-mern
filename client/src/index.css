@@ -19,11 +19,11 @@ code {
 
 
 .appbar-logo {
-  height: 70px;
+  height: 60px;
   width: auto;
-  margin: 5px 0;
+  z-index: 5;
+  margin: -5px 0;
   margin-left: auto;
-  z-index: 5
 }
 
 .MuiButton-label {
@@ -35,6 +35,7 @@ code {
 .paginationBttns {
   width: 80%;
   height: 40px;
+  margin-top: 30px;
   list-style: none;
   display: flex;
   justify-content: center;
@@ -66,4 +67,35 @@ code {
 
 .break-me {
   color: red
+}
+
+.navbar {
+  background-color: #2b2eff;
+  color: white;
+  padding-top: -20px;
+  border-bottom: 2px solid black
+}
+
+.bringing-card {
+  margin-bottom: 20px;
+}
+
+#homeIntro {
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: large;
+  text-align: center;
+  background-color: #ffffff3f;
+}
+
+@media only screen and (max-width: 700px) {
+  #homeIntro {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+#homeLogo {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

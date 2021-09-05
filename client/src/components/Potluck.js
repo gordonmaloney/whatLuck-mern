@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Bringing from './Bringing'
 import { Link } from "react-router-dom";
+import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
 
 const Potluck = ({ potluck }) => {
   
@@ -9,18 +10,22 @@ const Reply = () => {
     <>
     {potluck.replies.map((reply) => {
           return (
-            <>
-              <p>{reply.bringer} is bringing {reply.bringing.map((bringItem, index) => {
-    return (
-      <>
-        
-        {bringItem}
-        {index < reply.bringing.length - 2 ? ", " : "" }
-        {index === reply.bringing.length - 2 ? " and " : "" }
-      </>
-    );
-  })}</p>
-            </>
+            <Col xs="12" sm="6" md="4">
+            <Card className="bringing-card">
+              <CardHeader><b>{reply.bringer}</b> is bringing...</CardHeader>
+              <CardBody>
+                {reply.bringing.map((bringItem, index) => {
+                  return (
+                    <>
+                      {bringItem}
+                      {index < reply.bringing.length - 2 ? ", " : ""}
+                      {index === reply.bringing.length - 2 ? " and " : ""}
+                    </>
+                  );
+                })}
+              </CardBody>
+            </Card>
+            </Col>
           );
         })}
     </>
@@ -29,8 +34,7 @@ const Reply = () => {
 
   return (
     <>
-        <h1>{potluck.potluckTitle}</h1>
-        <p>Unique id: <Link to={`potlucks/${potluck.idCode}`}>{potluck.idCode}</Link></p>
+        <h1><Link to={`potlucks/${potluck.idCode}`}>{potluck.potluckTitle}</Link></h1>
       <li>
 <b>Theme: </b> {potluck.potluckTheme}
       </li>
@@ -50,9 +54,9 @@ const Reply = () => {
           );
         })}
       </li>
-
-      <Reply />
-      <Bringing potluck={potluck}/>
+      <Row>
+        <Reply />
+      </Row>
     </>
   );
 };
