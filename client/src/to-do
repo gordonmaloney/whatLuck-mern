@@ -7,11 +7,13 @@
 //format displays
 //make create form nicer
 //make menu buttons
+//add delete function - admin only
+
 
 
 
 bring back crazy tags??
 make public/private option
 set up color scheme (sass?)
-add delete function - admin only
+delete reply function
 redeploy

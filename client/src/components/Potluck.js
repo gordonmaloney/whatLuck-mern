@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import Bringing from './Bringing'
 import { Link } from "react-router-dom";
 import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
+import { Button } from "reactstrap";
+import { useDispatch } from "react-redux";
+import { deletePotluck } from "../actions/potlucks";
+
 
 const Potluck = ({ potluck }) => {
-  
+
 const Reply = () => {
   return (
     <>
@@ -32,10 +36,18 @@ const Reply = () => {
   )
 }
 
+const dispatch = useDispatch();
+
   return (
     <Card className="potluck-card">
       <CardHeader>
         <h1><Link to={`potlucks/${potluck.idCode}`}>{potluck.potluckTitle}</Link></h1>
+
+
+        {(window.location.href.indexOf("admin") != -1) ?
+        <Button size="small" color="primary" onClick={() => dispatch(deletePotluck(potluck._id))}>Delete</Button> : ""
+        }
+
       </CardHeader>
       <CardBody className="potluck-card-body">
 

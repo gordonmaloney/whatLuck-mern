@@ -31,3 +31,16 @@ export const updatePotluck = (id, post) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const deletePotluck = (id) => async (dispatch) => {
+  try {
+    console.log("deleting...")
+
+    await api.deletePotluck(id);
+
+
+    dispatch({type: 'DELETE', payload: id})
+  } catch (error) {
+    console.log(error);
+  }
+};

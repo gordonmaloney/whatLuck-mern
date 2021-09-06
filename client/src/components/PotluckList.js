@@ -4,6 +4,8 @@ import Potluck from "./Potluck";
 import { CircularProgress } from "@material-ui/core";
 import ReactPaginate from "react-paginate";
 
+import { deletePotluck } from "../actions/potlucks";
+
 const PotluckList = () => {
   const potlucks = useSelector((state) => state.potlucks);
 
