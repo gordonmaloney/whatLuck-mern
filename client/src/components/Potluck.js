@@ -39,13 +39,13 @@ const Reply = () => {
       </CardHeader>
       <CardBody className="potluck-card-body">
 
-      <li>
-<b>Theme: </b> {potluck.potluckTheme}
-      </li>
+      {potluck.potluckTheme ? <li><b>Theme: </b> {potluck.potluckTheme} </li> : ""}
+
       <li>
         <b>Hosted by:</b> {potluck.potluckHost}
       </li>
-      <li className="mb-4">
+
+      {potluck.potluckTheme ?       <li className="mb-4">
         <b>Essentials:</b>
         {potluck.essentials.map((essential, index) => {
           return (
@@ -57,7 +57,9 @@ const Reply = () => {
             </>
           );
         })}
-      </li>
+      </li> :  <><br /> </>}
+
+
       
       <Row>
         <Reply />

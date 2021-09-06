@@ -49,8 +49,6 @@ const PotluckList = () => {
       />
     </>
   );
-
-  return <></>;
 };
 
 export default PotluckList;

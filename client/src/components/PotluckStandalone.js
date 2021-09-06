@@ -58,25 +58,28 @@ const PotluckStandalone = (props) => {
           Copy Link
         </Button>
       </p>
-      <li>
-        <b>Theme: </b> {potluck.potluckTheme}
-      </li>
+      
+        {potluck.potluckTheme ? <li><b>Theme: </b> {potluck.potluckTheme} </li> : ""}
+        
+      
       <li>
         <b>Hosted by:</b> {potluck.potluckHost}
       </li>
-      <li className="mb-4">
+
+
+      {potluck.potluckTheme ?       <li className="mb-4">
         <b>Essentials:</b>
         {potluck.essentials.map((essential, index) => {
           return (
             <>
               {" "}
               {essential}
-              {index < potluck.essentials.length - 2 ? ", " : ""}
-              {index === potluck.essentials.length - 2 ? " and " : ""}
+              {index < potluck.essentials.length - 2 ? ", " : "" }
+              {index === potluck.essentials.length - 2 ? " and " : "" }
             </>
           );
         })}
-      </li>
+      </li> : <><br /> </>}
 
         <Row>
           <Reply />

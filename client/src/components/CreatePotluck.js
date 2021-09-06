@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useCallback} from 'react';
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import {useHistory} from 'react-router-dom';
 
 import { createPotluck } from "../actions/potlucks";
 import randomWords from 'random-words'
 import { Card, CardHeader, CardBody } from 'reactstrap'
 
+
 const CreatePotluck = () => {
+
+  const history = useHistory();
+
   const [potluckData, setPotluckData] = useState({
     potluckHost: "",
     potluckTitle: "",
@@ -22,8 +27,12 @@ const CreatePotluck = () => {
     e.preventDefault();
     dispatch(createPotluck(potluckData));
     console.log(`success! click here to see your potluck: http://localhost:3000/potlucks/${potluckData.idCode}`)
-    window.location.href = `/potlucks/${potluckData.idCode}`
+    //window.location.href = `/potlucks/${potluckData.idCode}`
+    handleRedirect(potluckData.idCode);
   };
+
+  const handleRedirect = (url) => 
+  (setTimeout(function(){history.push(`/potlucks/${url}`)},500))
 
   return (
     <Card className="create-potluck-card">
