@@ -32,14 +32,15 @@ export const updatePotluck = (id, post) => async (dispatch) => {
   }
 };
 
+
 export const deletePotluck = (id) => async (dispatch) => {
   try {
-    console.log("deleting...")
+    console.log("deleting potluck...")
 
     await api.deletePotluck(id);
 
 
-    dispatch({type: 'DELETE', payload: id})
+    dispatch({type: 'DELETE_POTLUCK', payload: id})
   } catch (error) {
     console.log(error);
   }

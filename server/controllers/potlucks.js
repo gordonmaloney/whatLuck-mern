@@ -48,7 +48,7 @@ export const deletePotluck = async (req, res) => {
 
     await PotluckBody.findByIdAndRemove(id);
 
-    console.log('delete')
+    console.log('delete potluck')
 
     res.json({message: 'post deleted successfully'});
 }

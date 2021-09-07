@@ -8,10 +8,9 @@ export default (potlucks = [], action) => {
 
     case "UPDATE":
       return potlucks.map((potluck) =>
-      potluck._id === action.payload._id ? action.payload : potluck
-      );
+      potluck._id === action.payload._id ? action.payload : potluck);
 
-    case 'DELETE':
+    case 'DELETE_POTLUCK':
       return potlucks.filter((potluck) => potluck._id !== action.payload);
       
     default:

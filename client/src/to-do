@@ -1,3 +1,4 @@
+DONE
 //pagination
 //make menu and images responsive for mobile
 //reverse order of potluck list
@@ -9,9 +10,27 @@
 //make menu buttons
 //add delete function - admin only
 //bring back crazy tags??
+//make public/private option
+//change background
+//delete reply function
 
 
-make public/private option
-set up color scheme (sass?)
-delete reply function
-redeploy
+TO-DO
+change card heading format
+turn all buttons into material ui ones
+form validation
+set up admin dashboard  
+.env hide credentials
+autosuggest for essentials input - https://github.com/TeamWertarbyte/material-ui-chip-input/blob/master/stories/examples/react-autosuggest.js
+    - set up with dummy data
+    - push new data to mongodb
+    - link mongo data to autosuggest
+    - add threshold (three appearances or sth)
+    - don't add private potluck data to suggestions
+UX/UI stuff - inc SASS
+technical details page
+
+
+CARPARK
+link up to a recipe API
+ensure potluck ID is unique

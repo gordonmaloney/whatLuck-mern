@@ -8,9 +8,9 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Button,
 } from "reactstrap";
 import logo from "../images/whatluck-logo.png";
+import { Button } from '@material-ui/core'
 
 export default function NavbarComponent() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,21 +23,21 @@ export default function NavbarComponent() {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <Button outline color="primary" className="navbar-btn">
+            <Button variant="outlined" color="primary" className="navbar-btn">
               <Link to="/">
                 <NavLink>Home</NavLink>
                 </Link>
             </Button>
           </NavItem>
           <NavItem>
-            <Button outline color="primary" className="navbar-btn">
+            <Button variant="outlined" color="primary" className="navbar-btn">
               <Link to="/createpotluck">
               <NavLink>Create a potluck</NavLink>
               </Link>
             </Button>
           </NavItem>
           <NavItem>
-            <Button outline color="primary" className="navbar-btn">
+            <Button variant="outlined" color="primary" className="navbar-btn">
               <Link to="/Potlucklist">
                 <NavLink>All potlucks</NavLink>
                 </Link>
