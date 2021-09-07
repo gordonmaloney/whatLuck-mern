@@ -18,10 +18,14 @@ const PotluckList = () => {
   const displayPotlucks = potlucks.reverse()
   .slice(pagesVisited, pagesVisited + potlucksPerPage)
   .map((potluck) => {
-    return (
-      <Potluck potluck={potluck} />
-    )
-    })
+    if (!potluck.private===true || window.location.href.indexOf("admin") != -1){
+       return (
+        <Potluck potluck={potluck} />
+       )
+    } else {
+      return (<></>)
+    }
+  })
 
     const pageCount = Math.ceil(potlucks.length / potlucksPerPage);
 

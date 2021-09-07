@@ -4,8 +4,9 @@ import { useDispatch } from "react-redux";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-import Chip from "@material-ui/core/Chip";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+import ChipInput from "material-ui-chip-input";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import { createPotluck } from "../actions/potlucks";
 import randomWords from "random-words";
@@ -13,7 +14,8 @@ import { Card, CardHeader, CardBody } from "reactstrap";
 
 const CreatePotluck = () => {
   const history = useHistory();
-  const Examples = [];
+
+  const [checked, setChecked] = React.useState(false);
 
   const [potluckData, setPotluckData] = useState({
     potluckHost: "",
@@ -21,6 +23,7 @@ const CreatePotluck = () => {
     potluckTheme: "",
     essentials: [],
     idCode: randomWords(3).join("-"),
+    private: false,
   });
 
   const dispatch = useDispatch();
@@ -33,6 +36,12 @@ const CreatePotluck = () => {
     );
     //window.location.href = `/potlucks/${potluckData.idCode}`
     handleRedirect(potluckData.idCode);
+  };
+
+  const handleCheckbox = (event) => {
+    setChecked(event.target.checked);
+    setPotluckData({ ...potluckData, private: event.target.checked });
+    console.log(event.target.checked)
   };
 
   const handleRedirect = (url) =>
@@ -83,56 +92,19 @@ const CreatePotluck = () => {
             margin="normal"
           />
 
-          
-        <TextField
-          name="essentials"
-          label="Essentials (comma separated)"
-          fullWidth
-          onChange={(e) =>
-            setPotluckData({
-              ...potluckData,
-              essentials: e.target.value.split(","),
-            })
-          }
-          margin="normal"
-        />
-        
-{/*
-          <Autocomplete
-            multiple
-            id="tags-standard"
-            options={Examples.map((option) => option.title)}
-            freeSolo
-            fullWidth
-            renderTags={(value, getTagProps) =>
-              value.map((option, index) => (
-                <Chip
-                  variant="standard"
-                  label={option}
-                  {...getTagProps({ index })}
-                />
-              ))
-            }
-
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                variant="standard"
-                name="Essentials"
-                label="Essentials"
-                margin="normal"
-                placeholder="Essentials"
-                value={potluckData.essentials}
-                onChange={(e) =>
-                  setPotluckData({
-                    ...potluckData,
-                    essentials: e.target.value,
-                  })
-                }
-              />
-            )}
+          <ChipInput
+            name="essentials"
+            fullWidth="true"
+            margin="normal"
+            defaultValue=""
+            label="Essentials"
+            onChange={(e) => setPotluckData({ ...potluckData, essentials: e })}
           />
-*/}
+
+          <FormControlLabel
+           control={<Checkbox checked={potluckData.checked} onChange={handleCheckbox} name="private" />}
+           label="Make private"
+          />
 
           <br />
           <br />
