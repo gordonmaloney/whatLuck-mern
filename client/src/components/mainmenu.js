@@ -9,6 +9,8 @@ import Home from "./Home";
 import logo from '../images/whatluck-logo.png'
 import NavbarComponent from "./NavbarComponent";
 import AdminPotluckList from "./Admin/PotluckList";
+import Details from "./TechnicalDetails"
+
 
 function MainMenu() {
   
@@ -35,6 +37,9 @@ function MainMenu() {
 
           <Route exact path="/admin">
             <AdminPotluckList />
+          </Route>
+          <Route exact path="/details">
+            <Details />
           </Route>
         </Switch>
       </Container>
