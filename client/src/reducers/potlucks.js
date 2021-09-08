@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, UPDATE_POTLUCK, DELETE_POTLUCK } from './ActionTypes'
+import { FETCH_ALL, CREATE, UPDATE, DELETE_POTLUCK } from '../constants/ActionTypes'
 
 
 export default (potlucks = [], action) => {

@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { createPotluck, getPotlucks, updatePotluck, deletePotluck, deleteReply } from '../controllers/potlucks.js'
+import { createPotluck, getPotlucks, updatePotluck, deletePotluck } from '../controllers/potlucks.js'
 
 const router = express.Router();
 

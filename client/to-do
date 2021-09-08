@@ -17,12 +17,13 @@ DONE
 //form validation
 //maker form validation nicer - not an alert
 //turn all buttons into material ui ones
+//action constants
+//.env hide credentials
 
 
 
 TO-DO
 change card heading format
-.env hide credentials
 autosuggest for essentials input - https://github.com/TeamWertarbyte/material-ui-chip-input/blob/master/stories/examples/react-autosuggest.js
     - set up with dummy data
     - push new data to mongodb

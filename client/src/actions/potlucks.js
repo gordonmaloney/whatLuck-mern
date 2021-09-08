@@ -1,5 +1,5 @@
 import * as api from "../api";
-import { FETCH_ALL, CREATE, UPDATE_POTLUCK, DELETE_POTLUCK } from './ActionTypes'
+import { FETCH_ALL, CREATE, UPDATE, DELETE_POTLUCK } from '../constants/ActionTypes'
 
 // Action Creators]
 export const getPotlucks = () => async (dispatch) => {
