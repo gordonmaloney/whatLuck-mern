@@ -1,18 +1,14 @@
 import React, { Component } from "react";
-import Bringing from "./Bringing";
+import Bringing from "../Bringing";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
 import { Button } from "reactstrap";
 import { useDispatch } from "react-redux";
-import { deletePotluck } from "../actions/potlucks";
-import { updatePotluck } from "../actions/potlucks";
+import { deletePotluck } from "../../actions/potlucks";
+import { updatePotluck } from "../../actions/potlucks";
 
-const Potluck = ({ potluck }) => {
+const AdminPotluck = ({ potluck }) => {
   const dispatch = useDispatch();
-
-
- 
-
 
   const Reply = () => {
     const potluckParent = potluck;
@@ -54,6 +50,13 @@ const Potluck = ({ potluck }) => {
                   })}
                 </CardBody>
 
+                  <Button
+                    size="small"
+                    color="danger"
+                    onClick={() => handleDeleteReply(potluckParent, reply, replies)}
+                  >
+                    Delete
+                  </Button>
               </Card>
             </Col>
           );
@@ -68,6 +71,14 @@ const Potluck = ({ potluck }) => {
         <h1>
           <Link to={`potlucks/${potluck.idCode}`}>{potluck.potluckTitle}</Link>
         </h1>
+
+          <Button
+            size="small"
+            color="danger"
+            onClick={() => dispatch(deletePotluck(potluck._id))}
+          >
+            Delete
+          </Button>
 
       </CardHeader>
       <CardBody className="potluck-card-body">
@@ -111,4 +122,4 @@ const Potluck = ({ potluck }) => {
   );
 };
 
-export default Potluck;
+export default AdminPotluck;

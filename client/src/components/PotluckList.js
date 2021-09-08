@@ -18,7 +18,7 @@ const PotluckList = () => {
   const displayPotlucks = potlucks.reverse()
   .slice(pagesVisited, pagesVisited + potlucksPerPage)
   .map((potluck) => {
-    if (!potluck.private===true || window.location.href.indexOf("admin") != -1){
+    if (!potluck.private===true){
        return (
         <Potluck potluck={potluck} />
        )

@@ -8,7 +8,7 @@ import { AppBar, Toolbar, Typography, Button, ButtonGroup } from "@material-ui/c
 import Home from "./Home";
 import logo from '../images/whatluck-logo.png'
 import NavbarComponent from "./NavbarComponent";
-
+import AdminPotluckList from "./Admin/PotluckList";
 
 function MainMenu() {
   
@@ -32,6 +32,10 @@ function MainMenu() {
             <PotluckList />
           </Route>
           <Route path="/potlucks/:idCode" component={PotluckStandalone} />
+
+          <Route exact path="/admin">
+            <AdminPotluckList />
+          </Route>
         </Switch>
       </Container>
     </BrowserRouter>
