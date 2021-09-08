@@ -51,7 +51,7 @@ const Bringing = ({ potluck }) => {
           <br />
 
 
-          {bringerData.errMessBringer === true || bringerData.errMessBringing ?
+          {bringerData.errMessBringer === true || bringerData.errMessBringing === true ?
   <p className="errMess"><em>You must enter your name and say what you're bringing!</em></p>
   :
   <></>
@@ -75,7 +75,7 @@ const Bringing = ({ potluck }) => {
           size="large"
           fullWidth
           onClick={(e) =>
-            setBringerData({ ...bringerData, errMessBringing: true, errMessBringer: true })
+            bringerData.bringer === "" ? setBringerData({ ...bringerData, errMessBringer: true}) : bringerData.bringing === "" ? setBringerData({ ...bringerData, errMessBringing: true}) : <></>
           }
         >
           Submit

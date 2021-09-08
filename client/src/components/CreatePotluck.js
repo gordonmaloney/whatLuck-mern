@@ -51,6 +51,11 @@ const CreatePotluck = () => {
       history.push(`/potlucks/${url}`);
     }, 500);
 
+    const handleInvalidSubmit = () => {
+    potluckData.potluckHost === "" ? setPotluckData({ ...potluckData, errMessHost: true}) : potluckData.potluckTitle === "" ? setPotluckData({ ...potluckData, errMessTitle: true }) : <></>
+    }
+
+
   return (
     <Card className="create-potluck-card">
       <CardHeader>
@@ -143,7 +148,7 @@ const CreatePotluck = () => {
             fullWidth
             margin="large"
             onClick={(e) =>
-              setPotluckData({ ...potluckData, errMessHost: true, errMessTitle: true })
+              potluckData.potluckHost === "" ? setPotluckData({ ...potluckData, errMessHost: true}) : potluckData.potluckTitle === "" ? setPotluckData({ ...potluckData, errMessTitle: true }) : <></>
             }
           >
             Submit
