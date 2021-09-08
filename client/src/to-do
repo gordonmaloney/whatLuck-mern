@@ -14,12 +14,14 @@ DONE
 //change background
 //delete reply function
 //set up admin dashboard  
+//form validation
+//maker form validation nicer - not an alert
+//turn all buttons into material ui ones
+
 
 
 TO-DO
 change card heading format
-turn all buttons into material ui ones
-form validation
 .env hide credentials
 autosuggest for essentials input - https://github.com/TeamWertarbyte/material-ui-chip-input/blob/master/stories/examples/react-autosuggest.js
     - set up with dummy data

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
+import { TextField, Button, Typography, FormControl, FormGroup } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -24,6 +24,8 @@ const CreatePotluck = () => {
     essentials: [],
     idCode: randomWords(3).join("-"),
     private: false,
+    errMessHost: false,
+    errMessTitle: false
   });
 
   const dispatch = useDispatch();
@@ -58,25 +60,29 @@ const CreatePotluck = () => {
       </CardHeader>
       <CardBody>
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+          <FormControl fullWidth>
           <TextField
             name="host"
             label="Potluck Host"
+            required
             fullWidth
             className="formInput"
             value={potluckData.potluckHost}
             onChange={(e) =>
-              setPotluckData({ ...potluckData, potluckHost: e.target.value })
+              setPotluckData({ ...potluckData, potluckHost: e.target.value, errMessHost: false})
             }
             margin="small"
           />
+          </FormControl>
           <TextField
             name="title"
             label="Potluck Title"
+            required
             fullWidth
             className="formInput"
             value={potluckData.potluckTitle}
             onChange={(e) =>
-              setPotluckData({ ...potluckData, potluckTitle: e.target.value })
+              setPotluckData({ ...potluckData, potluckTitle: e.target.value, errMessTitle: false })
             }
             margin="normal"
           />
@@ -108,16 +114,45 @@ const CreatePotluck = () => {
 
           <br />
           <br />
+
+
+{potluckData.errMessHost === true || potluckData.errMessTitle ?
+  <p className="errMess"><em>You must enter a host and a title</em></p>
+  :
+  <></>
+        }
+
+
+          {potluckData.potluckHost !== "" && potluckData.potluckTitle ?
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              type="submit"
+              fullWidth
+              margin="large"
+            > 
+            Submit
+          </Button>
+        : 
           <Button
+          
             variant="contained"
             color="primary"
             size="large"
-            type="submit"
             fullWidth
             margin="large"
+            onClick={(e) =>
+              setPotluckData({ ...potluckData, errMessHost: true, errMessTitle: true })
+            }
           >
             Submit
           </Button>
+          }
+
+
+
+
         </form>
       </CardBody>
     </Card>

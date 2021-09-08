@@ -6,7 +6,7 @@ import { Card, CardBody, CardHeader } from "reactstrap";
 import ChipInput from "material-ui-chip-input";
 
 const Bringing = ({ potluck }) => {
-  const [bringerData, setBringerData] = useState({ bringer: "", bringing: "" });
+  const [bringerData, setBringerData] = useState({ bringer: "", bringing: "", errMessBringer: false, errMessBringing: false});
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -26,27 +26,39 @@ const Bringing = ({ potluck }) => {
       <CardBody>
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <TextField
+          required
             name="bringer"
             label="Bringer"
             fullWidth
             value={bringerData.bringer}
             onChange={(e) =>
-              setBringerData({ ...bringerData, bringer: e.target.value })
+              setBringerData({ ...bringerData, bringer: e.target.value, errMessBringer: false })
             }
             margin="small"
           />
 
           <ChipInput
+          required
             name="bringing"
             fullWidth="true"
             margin="normal"
             defaultValue=""
             label="Bringing"
-            onChange={(e) => setBringerData({ ...bringerData, bringing: e })}
+            onChange={(e) => setBringerData({ ...bringerData, bringing: e, errMessBringing: false })}
           />
           
           <br />
           <br />
+
+
+          {bringerData.errMessBringer === true || bringerData.errMessBringing ?
+  <p className="errMess"><em>You must enter your name and say what you're bringing!</em></p>
+  :
+  <></>
+        }
+
+
+          {bringerData.bringer !== "" && bringerData.bringing !== "" ?
           <Button
             variant="contained"
             color="primary"
@@ -56,6 +68,19 @@ const Bringing = ({ potluck }) => {
           >
             Submit
           </Button>
+          : 
+          <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          fullWidth
+          onClick={(e) =>
+            setBringerData({ ...bringerData, errMessBringing: true, errMessBringer: true })
+          }
+        >
+          Submit
+        </Button>
+}
         </form>
       </CardBody>
     </Card>
