@@ -1,16 +1,19 @@
+import { FETCH_ALL, CREATE, UPDATE_POTLUCK, DELETE_POTLUCK } from './ActionTypes'
+
+
 export default (potlucks = [], action) => {
   switch (action.type) {
-    case "FETCH_ALL":
+    case FETCH_ALL:
       return action.payload;
 
-    case "CREATE":
+    case CREATE:
       return [...potlucks, action.payload];
 
-    case "UPDATE":
+    case UPDATE:
       return potlucks.map((potluck) =>
       potluck._id === action.payload._id ? action.payload : potluck);
 
-    case 'DELETE_POTLUCK':
+    case DELETE_POTLUCK:
       return potlucks.filter((potluck) => potluck._id !== action.payload);
       
     default:
