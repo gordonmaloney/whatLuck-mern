@@ -28,14 +28,14 @@ DONE
 
 
 TO-DO
+UX/UI stuff - inc SASS
+
+
+CARPARK
+link up to a recipe API
 autosuggest for essentials input - https://github.com/TeamWertarbyte/material-ui-chip-input/blob/master/stories/examples/react-autosuggest.js
     - set up with dummy data
     - push new data to mongodb
     - link mongo data to autosuggest
     - add threshold (three appearances or sth)
     - don't add private potluck data to suggestions
-UX/UI stuff - inc SASS
-
-
-CARPARK
-link up to a recipe API

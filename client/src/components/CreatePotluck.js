@@ -14,6 +14,7 @@ import { createPotluck } from "../actions/potlucks";
 import randomWords from "random-words";
 import { Card, CardHeader, CardBody } from "reactstrap";
 
+
 const CreatePotluck = () => {
   const potlucks = useSelector((state) => state.potlucks);
 
