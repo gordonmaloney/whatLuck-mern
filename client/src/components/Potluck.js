@@ -66,7 +66,7 @@ const Potluck = ({ potluck }) => {
     <Card className="potluck-card">
       <CardHeader>
         <h1>
-          <Link to={`potlucks/${potluck.idCode}`}>{potluck.potluckTitle}</Link>
+          <Link className="potluckHeader" to={`potlucks/${potluck.idCode}`}>{potluck.potluckTitle}</Link>
         </h1>
 
       </CardHeader>

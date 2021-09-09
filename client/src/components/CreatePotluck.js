@@ -1,8 +1,10 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { TextField, Button, Typography, FormControl, FormGroup } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 import ChipInput from "material-ui-chip-input";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -13,6 +15,8 @@ import randomWords from "random-words";
 import { Card, CardHeader, CardBody } from "reactstrap";
 
 const CreatePotluck = () => {
+  const potlucks = useSelector((state) => state.potlucks);
+
   const history = useHistory();
 
   const [checked, setChecked] = React.useState(false);
@@ -28,11 +32,20 @@ const CreatePotluck = () => {
     errMessTitle: false
   });
 
+  //ensure idCode is unique
+  if (potlucks.map(potluck => potluck.idCode).includes(potluckData.idCode)) {
+    potluckData.idCode = randomWords(4).join("-")
+  }
+
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createPotluck(potluckData));
+
+    //reset form
+    setPotluckData({ ...potluckData, potluckHost: "", potluckTitle: "", potluckTheme: "", essentials: [], private: false, errMessHost: false, errMessTitle: false })
+
     console.log(
       `success! click here to see your potluck: http://localhost:3000/potlucks/${potluckData.idCode}`
     );
@@ -50,10 +63,6 @@ const CreatePotluck = () => {
     setTimeout(function () {
       history.push(`/potlucks/${url}`);
     }, 500);
-
-    const handleInvalidSubmit = () => {
-    potluckData.potluckHost === "" ? setPotluckData({ ...potluckData, errMessHost: true}) : potluckData.potluckTitle === "" ? setPotluckData({ ...potluckData, errMessTitle: true }) : <></>
-    }
 
 
   return (
@@ -109,6 +118,10 @@ const CreatePotluck = () => {
             margin="normal"
             defaultValue=""
             label="Essentials"
+            value={potluckData.essentials}
+            clearInputValueOnChange="true"
+            newChipKeys={["Enter", ",", "."]}
+            blurBehavior="add"
             onChange={(e) => setPotluckData({ ...potluckData, essentials: e })}
           />
 

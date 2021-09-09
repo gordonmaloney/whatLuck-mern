@@ -5,10 +5,12 @@ import { CircularProgress } from "@material-ui/core";
 import AdminDashboard from "./AdminDashboard";
 
 const AdminPotluckList = () => {
-  const potlucks = useSelector((state) => state.potlucks);
+  const potlucks = useSelector((state) => state.potlucks.reverse());
 
 
-  const displayPotlucks = potlucks.reverse().map((potluck) => {
+  const reversedPotlucks = potlucks.reverse()
+
+  const displayPotlucks = potlucks.map((potluck) => {
        return (
         <AdminPotluck potluck={potluck} />
        )

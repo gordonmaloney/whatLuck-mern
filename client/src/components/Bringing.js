@@ -16,6 +16,9 @@ const Bringing = ({ potluck }) => {
     console.log(potluck);
 
     dispatch(updatePotluck(potluck._id, potluck));
+
+    //reset form
+    setBringerData({ bringer: "", bringing: [], errMessBringer: false, errMessBringing: false})
   };
 
   return (
@@ -42,8 +45,11 @@ const Bringing = ({ potluck }) => {
             name="bringing"
             fullWidth="true"
             margin="normal"
-            defaultValue=""
+            newChipKeys={["Enter", ",", "."]}
+            blurBehavior="add"
+            value={bringerData.bringing}
             label="Bringing"
+            clearInputValueOnChange="true"
             onChange={(e) => setBringerData({ ...bringerData, bringing: e, errMessBringing: false })}
           />
           

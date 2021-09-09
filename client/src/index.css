@@ -157,6 +157,9 @@ code {
   }
 }  
 
+.potluckHeader {
+  text-decoration:none
+}
 
 .errMess {
   color: red

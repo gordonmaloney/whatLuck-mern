@@ -19,11 +19,15 @@ DONE
 //turn all buttons into material ui ones
 //action constants
 //.env hide credentials
+//technical details page
+//change card heading format
+//essentials input - onblur and comma
+//reset forms on submit???
+//ensure potluck ID is unique
 
 
 
 TO-DO
-change card heading format
 autosuggest for essentials input - https://github.com/TeamWertarbyte/material-ui-chip-input/blob/master/stories/examples/react-autosuggest.js
     - set up with dummy data
     - push new data to mongodb
@@ -31,9 +35,7 @@ autosuggest for essentials input - https://github.com/TeamWertarbyte/material-ui
     - add threshold (three appearances or sth)
     - don't add private potluck data to suggestions
 UX/UI stuff - inc SASS
-technical details page
 
 
 CARPARK
 link up to a recipe API
-ensure potluck ID is unique

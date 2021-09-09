@@ -4,18 +4,18 @@ import Potluck from "./Potluck";
 import { CircularProgress } from "@material-ui/core";
 import ReactPaginate from "react-paginate";
 
-import { deletePotluck } from "../actions/potlucks";
-
 const PotluckList = () => {
   const potlucks = useSelector((state) => state.potlucks);
 
-  const [potlucksDisplay, setPotlucksDisplay] = useState(potlucks.slice());
+  const [potlucksDisplay, setPotlucksDisplay] = useState(potlucks.slice(0, 9999));
   const [pageNumber, setPageNumber] = useState(0);
 
   const potlucksPerPage = 3;
   const pagesVisited = pageNumber * potlucksPerPage;
 
-  const displayPotlucks = potlucks.reverse()
+  const filteredPotlucks = potlucks.filter(potluck => potluck.private !== true).reverse()
+  
+  const displayPotlucks = filteredPotlucks
   .slice(pagesVisited, pagesVisited + potlucksPerPage)
   .map((potluck) => {
     if (!potluck.private===true){
@@ -27,7 +27,7 @@ const PotluckList = () => {
     }
   })
 
-    const pageCount = Math.ceil(potlucks.length / potlucksPerPage);
+    const pageCount = Math.ceil(filteredPotlucks.length / potlucksPerPage);
 
     const changePage = ({ selected }) => {
       setPageNumber(selected);
