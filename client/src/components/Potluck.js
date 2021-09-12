@@ -19,14 +19,6 @@ const Potluck = ({ potluck }) => {
     const replies = potluck.replies
 
 
-    const handleDeleteReply = (potluckParent, reply, replies) => {
-      potluckParent.replies = replies.filter(data => data._id !== reply._id)
-  
-      console.log(potluckParent);
-  
-      dispatch(updatePotluck(potluck._id, potluckParent));
-    };
-
 
     return (
       <>

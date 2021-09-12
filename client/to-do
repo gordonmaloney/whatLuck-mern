@@ -24,11 +24,12 @@ DONE
 //essentials input - onblur and comma
 //reset forms on submit???
 //ensure potluck ID is unique
-
+//snackbars
 
 
 TO-DO
 UX/UI stuff - inc SASS
+check for duplicates
 
 
 CARPARK

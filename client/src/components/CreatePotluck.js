@@ -4,7 +4,9 @@ import { useDispatch } from "react-redux";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { CircularProgress } from "@material-ui/core";
 
+import SnackbarComponent from './Snackbar'
 
 import ChipInput from "material-ui-chip-input";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -15,7 +17,7 @@ import randomWords from "random-words";
 import { Card, CardHeader, CardBody } from "reactstrap";
 
 
-const CreatePotluck = () => {
+const CreatePotluck = ({showSnackbar}) => {
   const potlucks = useSelector((state) => state.potlucks);
 
   const history = useHistory();
@@ -33,6 +35,8 @@ const CreatePotluck = () => {
     errMessTitle: false
   });
 
+  const [posted, setPosted] = useState(false)
+
   //ensure idCode is unique
   if (potlucks.map(potluck => potluck.idCode).includes(potluckData.idCode)) {
     potluckData.idCode = randomWords(4).join("-")
@@ -41,18 +45,28 @@ const CreatePotluck = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
+    setPosted(true)
     e.preventDefault();
     dispatch(createPotluck(potluckData));
 
     //reset form
     setPotluckData({ ...potluckData, potluckHost: "", potluckTitle: "", potluckTheme: "", essentials: [], private: false, errMessHost: false, errMessTitle: false })
 
+
     console.log(
       `success! click here to see your potluck: http://localhost:3000/potlucks/${potluckData.idCode}`
     );
+
+    
     //window.location.href = `/potlucks/${potluckData.idCode}`
     handleRedirect(potluckData.idCode);
+
+
   };
+
+  const showSnackbarFunction = () => {
+    showSnackbar()
+  }
 
   const handleCheckbox = (event) => {
     setChecked(event.target.checked);
@@ -62,11 +76,16 @@ const CreatePotluck = () => {
 
   const handleRedirect = (url) =>
     setTimeout(function () {
-      history.push(`/potlucks/${url}`);
+      history.push(`/potlucks/${url}/potluckcreated`);
     }, 500);
 
 
+    if (posted === true) {
+      return     <center><CircularProgress /></center>
+
+    } else {
   return (
+    <>
     <Card className="create-potluck-card">
       <CardHeader>
         <Typography variant="h4" align="center">
@@ -119,7 +138,7 @@ const CreatePotluck = () => {
             margin="normal"
             defaultValue=""
             label="Essentials"
-            value={potluckData.essentials}
+            //value={potluckData.essentials}
             clearInputValueOnChange="true"
             newChipKeys={["Enter", ",", "."]}
             blurBehavior="add"
@@ -175,7 +194,10 @@ const CreatePotluck = () => {
         </form>
       </CardBody>
     </Card>
+
+</>
   );
+        }
 };
 
 export default CreatePotluck;

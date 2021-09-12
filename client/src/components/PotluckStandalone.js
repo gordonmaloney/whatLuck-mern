@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -6,14 +6,13 @@ import { CircularProgress } from "@material-ui/core";
 import Bringing from "./Bringing";
 import { Container, Row, Col, Card, CardHeader, CardBody, Button } from "reactstrap";
 
+import SnackbarComponent from "./Snackbar";
+
 const PotluckStandalone = (props) => {
   const potlucks = useSelector((state) => state.potlucks);
   const potluck = potlucks.find(
     ({ idCode }) => idCode === props.match.params.idCode
   );
-
-  console.log("params", props.match.params.idCode);
-  console.log("potluck", potluck);
 
   const Reply = () => {
     return (
@@ -46,6 +45,10 @@ const PotluckStandalone = (props) => {
     <CircularProgress />
   ) : (
     <>
+
+{window.location.href.indexOf("potluckcreated") > -1 ? <SnackbarComponent message="Potluck created!" show={true} /> : <></>}
+
+
         <Card className="potluck-card">
       <CardHeader>
       <h1>{potluck.potluckTitle}</h1>
@@ -54,7 +57,7 @@ const PotluckStandalone = (props) => {
       <p>
         <em>Your unique potluck id is: <Link to={potluck.idCode}>{potluck.idCode}</Link></em>
         {" "}
-        <Button size="sm" onClick={() => {navigator.clipboard.writeText(window.location.href)}}>
+        <Button size="sm" onClick={() => {navigator.clipboard.writeText(`http://whatluck.netlify.app/potlucks/${potluck.idCode}`)}}>
           Copy Link
         </Button>
       </p>
@@ -88,6 +91,7 @@ const PotluckStandalone = (props) => {
 
 </Card>
       <Bringing potluck={potluck} />
+
     </>
   );
 };

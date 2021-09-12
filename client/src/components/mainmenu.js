@@ -12,14 +12,16 @@ import AdminPotluckList from "./Admin/PotluckList";
 import Details from "./TechnicalDetails"
 
 
+
 function MainMenu() {
   
+
+
 
   return (
     <BrowserRouter>
             <NavbarComponent />
-
-      <Container>
+       <Container>
 
      
 

@@ -34,7 +34,7 @@ const PotluckList = () => {
     };
 
   return !potlucks.length ? (
-    <CircularProgress />
+    <center><CircularProgress /></center>
   ) : (
     <>
   {displayPotlucks}
