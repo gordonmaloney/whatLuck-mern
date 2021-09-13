@@ -21,6 +21,7 @@ h6,
   color: rgba(255, 255, 255, 0.774) !important;
   text-decoration: none;
   font-weight: 400;
+  z-index: 5
 }
 
 @media only screen and (min-width: 768px) {
@@ -242,7 +243,7 @@ body {
   border-bottom: 2px solid black;
   margin: 0;
   padding-right: 10%;
-  z-index: 1;
+  z-index: 4;
   min-height: 10%;
 }
 
@@ -340,4 +341,55 @@ body {
     margin-left:15px;
     margin-right:0;
   }
+}
+
+
+.search-card-hide {
+  margin-top: 20px;
+  padding-top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 10%;
+  width: 30%;
+  margin-left: auto;
+  display: none
+}
+
+.search-card-show {
+  margin-top: 20px;
+  padding-top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 10%;
+  width: 30%;
+  margin-left: auto;
+}
+
+.speeddialBtns {
+  color: #2b2eff !important;
+  z-index: 1
+}
+
+.speeddial, .MuiFab-primary {
+  background-color: #2b2eff !important;
+  z-index: 1
+}
+
+.MuiSpeedDial-root {
+  margin-top: 15px;
+  position: fixed;
+  right: 5%;
+}
+
+.searchClose {
+  float: right;
+  margin-bottom: -10px;
+  margin-left: 5px;
+  z-index: 2;
+}
+
+.behindClose {
+  z-index: 0;
+  width: 90%
+}
+.searchClose :hover {
+  cursor: pointer;
 }
