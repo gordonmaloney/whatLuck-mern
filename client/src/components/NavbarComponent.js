@@ -18,26 +18,34 @@ export default function NavbarComponent() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
+    <>
+
     <Navbar dark expand="md" sticky="top" className="ps-3 navbar">
-      <NavbarToggler onClick={toggle} />
+
+      <NavbarToggler onClick={toggle}/>
+      
+      <div className="appbar-logo-container collapsed"  href="/">
+      <img src={logo} className="appbar-logo" />
+      </div>
+
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <Button variant="outlined" color="primary" className="navbar-btn">
+            <Button variant="outlined" color="primary" className="navbar-btn" onClick={toggle}>
               <Link to="/">
                 <NavLink>Home</NavLink>
                 </Link>
             </Button>
           </NavItem>
           <NavItem>
-            <Button variant="outlined" color="primary" className="navbar-btn">
+            <Button variant="outlined" color="primary" className="navbar-btn" onClick={toggle}>
               <Link to="/createpotluck">
               <NavLink>Create a potluck</NavLink>
               </Link>
             </Button>
           </NavItem>
           <NavItem>
-            <Button variant="outlined" color="primary" className="navbar-btn">
+            <Button variant="outlined" color="primary" className="navbar-btn" onClick={toggle}>
               <Link to="/Potlucklist">
                 <NavLink>All potlucks</NavLink>
                 </Link>
@@ -45,9 +53,11 @@ export default function NavbarComponent() {
           </NavItem>
         </Nav>
       </Collapse>
-      <NavbarBrand href="/">
-        <img src={logo} className="appbar-logo" />
-      </NavbarBrand>
+      
+      <div className="appbar-logo-container notcollapsed"  href="/">
+      <img src={logo} className="appbar-logo" />
+      </div>
     </Navbar>
+    </>
   );
 }

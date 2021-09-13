@@ -10,7 +10,7 @@ export default function Home() {
             </center>
             <div id="homeIntro">
                 <h3>
-                whatLuck is the one-stop potluck organising app. 
+                whatLuck is the one-stop potluck organising app 
                 </h3>
                 <br/>
                 <p>

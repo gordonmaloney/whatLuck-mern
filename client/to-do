@@ -25,11 +25,12 @@ DONE
 //reset forms on submit???
 //ensure potluck ID is unique
 //snackbars
-
+//check for duplicates
+//close menu on click
+//logo fixed
 
 TO-DO
 UX/UI stuff - inc SASS
-check for duplicates
 
 
 CARPARK

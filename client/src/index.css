@@ -1,31 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-header,
+.potluckHeader,
+.nav-item,
+.nav-link {
+  font-family: "Noto Sans KR" !important;
+  font-weight: 600;
+}
+
+.navbar-button,
+.nav-item a,
+.nav-link {
+  color: rgba(255, 255, 255, 0.774) !important;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  .collapsing {
+    transition-duration: 0s;
+    height: inherit;
+  }
+}
+
+.navbar-btn,
+.nav-item {
+  border-radius: 5px;
+  margin-right: 5px;
+  transition-duration: 0s !important;
+  background-color: #4245ff;
+}
+
+.nav-item:hover {
+  background-color: #2b2fff9d !important;
+}
+
 body {
   margin: 0;
+  /*
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    */
+  font-family: "Montserrat" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #c7efff9c;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.05'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card-body {
+  font-family: "Montserrat" !important;
 }
 
 .subHeader {
   padding-top: 20px;
 }
 
-
 .appbar-logo {
   height: 60px;
   width: auto;
-  z-index: 5;
+  z-index: 2;
   margin: -5px 0;
   margin-left: auto;
+  float: right;
+  margin-right: 5px;
 }
+
+.appbar-logo.container {
+  float: right;
+}
+
 
 .MuiButton-label {
   color: white;
@@ -49,10 +101,11 @@ code {
   border: 1px solid #2b2eff;
   color: #2b2eff;
   cursor: pointer;
+  background-color: #ffffff4d;
 }
 
 .paginationBttns a:hover {
-  color: white;
+  color: white !important;
   background-color: #2b2eff;
 }
 
@@ -61,9 +114,14 @@ code {
   background-color: #2b2eff;
 }
 
-.paginationDisabled a {
-  color: grey;
-  background-color: grey;
+.paginationDisabled {
+  display: none;
+}
+
+.paginationDisabled a:hover {
+  color: white;
+  background-color: #a7a9fc;
+  cursor: default;
 }
 
 .bringing-card {
@@ -76,6 +134,11 @@ code {
   font-size: large;
   text-align: center;
   background-color: #ffffff3f;
+  padding: 10px 10px;
+  padding-bottom: -10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -93,6 +156,15 @@ code {
 .potluck-card {
   margin-top: 20px;
   background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+@media only screen and (max-width: 700px) {
+  .potluck-card {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
 }
 
 .potluck-card-body {
@@ -103,11 +175,10 @@ code {
 .bringing-reply-card {
   margin-top: 20px;
   background-color: rgba(255, 255, 255, 0.5);
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 20px
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 20px;
 }
-
 
 @media only screen and (max-width: 700px) {
   .bringing-reply-card {
@@ -121,7 +192,7 @@ code {
   background-color: rgba(255, 255, 255, 0.5);
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -133,13 +204,34 @@ code {
 
 .navbar-btn {
   margin-right: 10px;
-  color: white
+  color: white;
+}
+
+
+
+
+@media only screen and (min-width: 769px) {
+  .collapsed {
+    display: none;
+  }
+  .notcollapsed {
+    display: show;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .navbar-btn {
     margin-top: 10px;
     width: 90%;
+  }
+  .nav-item {
+    margin-top: 5px;
+  }
+  .collapsed {
+    display: show;
+  }
+  .notcollapsed {
+    display: none
   }
 }
 
@@ -148,25 +240,104 @@ code {
   color: white;
   padding-top: -20px;
   border-bottom: 2px solid black;
-  margin: 0 16px
+  margin: 0;
+  padding-right: 10%;
+  z-index: 1;
+  min-height: 10%;
 }
+
+.navbar-nav {
+  padding-left: 10%;
+}
+
+@media only screen and (max-width: 992px) {
+.navbar, .navbar-nav {
+  padding-left: 5%;
+  padding-right: 5%
+}
+}
+  
 
 @media only screen and (max-width: 768px) {
   .navbar {
-    margin: 0
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
   }
-}  
+}
 
 .potluckHeader {
-  text-decoration:none
+  text-decoration: none;
 }
 
 .errMess {
-  color: red
+  color: red;
 }
-
 
 .MuiSnackbarContent-root {
   background-color: #0d6efd !important;
-  border: 2px solid grey
+  border: 2px solid grey;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+}
+
+
+.MuiButton-containedPrimary, .copyLinkBtn {
+  background-color: #2b2eff !important;
+}
+
+.MuiCheckbox-colorSecondary {
+  color: #2b2eff !important
+}
+
+.copyLinkBtn {
+  margin-left: 10px;
+}
+
+.potluckLink {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.potluckLink :hover {
+  color: black;
+  text-decoration: inherit;
+}
+
+.potluck-container :hover {
+  transform: scale(1.005);
+  box-shadow: 0px 0px 10px rgba(1,1,1, 0.3);
+
+}
+
+.potluck-container > .card :hover {
+  transform: scale(1);
+  opacity: 0.9;
+  box-shadow: 0px 0px 0px rgb(1,1,1);
+}
+
+@media (max-width:767px) {
+  .navbar-header {
+    display:flex;
+  }
+}
+
+@media (max-width:767px) {
+  .navbar-brand {
+    order:1;
+  }
+}
+
+@media (max-width:767px) {
+  .navbar-toggle {
+    order:0;
+    margin-left:15px;
+    margin-right:0;
+  }
 }

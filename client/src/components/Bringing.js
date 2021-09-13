@@ -10,6 +10,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
+import { Tooltip } from "@material-ui/core";
+
 const Bringing = ({ potluck }) => {
   const [bringerData, setBringerData] = useState({
     bringer: "",
@@ -78,6 +80,9 @@ const handleRequestDelete = (deletedChip) => {
 }
 
 
+
+
+
 if (posted === true) {
   return     <>
   
@@ -120,7 +125,7 @@ return (
             <TextField
               required
               name="bringer"
-              label="Bringer"
+              label="Your name"
               fullWidth
               value={bringerData.bringer}
               onChange={(e) =>
@@ -141,7 +146,7 @@ return (
               newChipKeys={["Enter", ",", "."]}
               blurBehavior="add"
               //value={bringerData.bringing}
-              label="Bringing"
+              label="Bringing..."
               clearInputValueOnChange="true"
               
               onChange={(e) => handleChange(e)

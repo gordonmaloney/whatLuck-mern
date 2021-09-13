@@ -16,13 +16,13 @@ const Potluck = ({ potluck }) => {
 
   const Reply = () => {
     const potluckParent = potluck;
-    const replies = potluck.replies
+    const replies = potluck.replies.slice(0,3)
 
 
 
     return (
       <>
-        {potluck.replies.map((reply) => {
+        {replies.map((reply) => {
           return (
             <Col xs="12" sm="6" md="4">
               <Card className="bringing-card">
@@ -50,15 +50,20 @@ const Potluck = ({ potluck }) => {
             </Col>
           );
         })}
+        {potluck.replies.length > 3 ?
+        <Col xs="12"><Card className="bringing-card"><CardBody><em>Open to view more...</em></CardBody></Card> </Col>
+        :""}
       </>
     );
   };
 
   return (
-    <Card className="potluck-card">
+    <Link className="potluckLink" to={`potlucks/${potluck.idCode}`}>
+      <div className="potluck-container">
+    <Card className="potluck-card" >
       <CardHeader>
         <h1>
-          <Link className="potluckHeader" to={`potlucks/${potluck.idCode}`}>{potluck.potluckTitle}</Link>
+          {potluck.potluckTitle}
         </h1>
 
       </CardHeader>
@@ -100,6 +105,8 @@ const Potluck = ({ potluck }) => {
         </Row>
       </CardBody>
     </Card>
+    </div>
+    </Link>
   );
 };
 
