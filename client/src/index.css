@@ -13,6 +13,18 @@ h6,
 .nav-link {
   font-family: "Noto Sans KR" !important;
   font-weight: 600;
+  text-transform: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-header,
+.potluckHeader {
+  color: rgb(36, 36, 36)
 }
 
 .navbar-button,
@@ -84,6 +96,9 @@ body {
   color: white;
   font-size: larger;
   text-decoration: none;
+  text-transform: none;
+  width: 80%
+
 }
 
 .paginationBttns {
@@ -240,15 +255,18 @@ body {
   background-color: #2b2eff;
   color: white;
   padding-top: -20px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid grey;
   margin: 0;
   padding-right: 10%;
   z-index: 4;
   min-height: 10%;
+  text-transform: none;
+  
 }
 
 .navbar-nav {
   padding-left: 10%;
+  text-transform: none;
 }
 
 @media only screen and (max-width: 992px) {
@@ -291,6 +309,7 @@ body {
 
 .MuiButton-containedPrimary, .copyLinkBtn {
   background-color: #2b2eff !important;
+  
 }
 
 .MuiCheckbox-colorSecondary {
@@ -392,4 +411,8 @@ body {
 }
 .searchClose :hover {
   cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
 }

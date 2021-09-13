@@ -58,6 +58,7 @@ export default function NavbarComponent() {
       <img src={logo} className="appbar-logo" />
       </div>
     </Navbar>
+    
     </>
   );
 }

@@ -59,6 +59,7 @@ const PotluckList = () => {
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   };
 
 
@@ -82,7 +83,6 @@ const PotluckList = () => {
     setSearchFilter(filter)
     console.log("filter = ", filter)
     document.body.scrollTop = document.documentElement.scrollTop = 0;
-
   };
 
   const handleOpen = () => {
@@ -108,6 +108,7 @@ const PotluckList = () => {
               key={action.name}
               icon={action.icon}
               tooltipTitle={action.name}
+              tooltipPlacement="bottom"
               onClick={() => handleCloseAction(action.filter)}
             />
           ))}

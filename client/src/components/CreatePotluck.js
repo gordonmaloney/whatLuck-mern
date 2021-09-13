@@ -88,9 +88,7 @@ const CreatePotluck = ({showSnackbar}) => {
     <>
     <Card className="create-potluck-card">
       <CardHeader>
-        <Typography variant="h4" align="center">
-          Create a Potluck
-        </Typography>
+          <h1>Create a Potluck</h1>
       </CardHeader>
       <CardBody>
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
