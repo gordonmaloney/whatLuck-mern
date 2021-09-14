@@ -1,11 +1,9 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { CircularProgress } from "@material-ui/core";
 import Bringing from "./Bringing";
 import {
-  Container,
   Row,
   Col,
   Card,
@@ -28,10 +26,6 @@ const PotluckStandalone = (props) => {
 
   const handleTooltipClose = () => {
     setTooltipOpen(false);
-  };
-
-  const handleTooltipOpen = () => {
-    setTooltipOpen(true);
   };
 
   const handleCopyclick = () => {

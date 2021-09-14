@@ -130,6 +130,7 @@ const handleCloseSearch = () => {
   return !potlucks.length ? (
     <center>
       <CircularProgress />
+      {console.log(potlucks)}
     </center>
   ) : (
     <>

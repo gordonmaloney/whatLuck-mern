@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, FormControl, FormGroup } from "@material-ui/core";
+import { TextField, Button, FormControl } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { CircularProgress } from "@material-ui/core";
-
-import SnackbarComponent from './Snackbar'
 
 import ChipInput from "material-ui-chip-input";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -17,7 +14,7 @@ import randomWords from "random-words";
 import { Card, CardHeader, CardBody } from "reactstrap";
 
 
-const CreatePotluck = ({showSnackbar}) => {
+const CreatePotluck = () => {
   const potlucks = useSelector((state) => state.potlucks);
 
   const history = useHistory();
@@ -63,10 +60,6 @@ const CreatePotluck = ({showSnackbar}) => {
 
 
   };
-
-  const showSnackbarFunction = () => {
-    showSnackbar()
-  }
 
   const handleCheckbox = (event) => {
     setChecked(event.target.checked);

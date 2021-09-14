@@ -8,14 +8,11 @@ import { AppBar, Toolbar, Typography, Button, ButtonGroup } from "@material-ui/c
 import Home from "./Home";
 import logo from '../images/whatluck-logo.png'
 import NavbarComponent from "./NavbarComponent";
-import AdminPotluckList from "./Admin/PotluckList";
 import Details from "./TechnicalDetails"
-
+import AdminLogin from "./Admin/AdminLogin";
 
 
 function MainMenu() {
-  
-
 
 
   return (
@@ -28,6 +25,7 @@ function MainMenu() {
         <Switch>
         <Route exact path="/">
             <Home />
+            
           </Route>
           <Route path="/createpotluck">
             <CreatePotluck />
@@ -38,13 +36,14 @@ function MainMenu() {
           <Route path="/potlucks/:idCode" component={PotluckStandalone} />
 
           <Route exact path="/admin">
-            <AdminPotluckList />
+            <AdminLogin />
           </Route>
           <Route exact path="/details">
             <Details />
           </Route>
         </Switch>
       </Container>
+
     </BrowserRouter>
   );
 }

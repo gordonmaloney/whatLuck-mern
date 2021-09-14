@@ -11,9 +11,9 @@ const App = () => {
   }, []);
 
   return (
-    
+
         <MainMenu />
-    
+
   );
 };
 

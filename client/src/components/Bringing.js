@@ -1,16 +1,13 @@
-import React, { useState, Component } from "react";
-import { TextField, Button, Typography, Paper, List } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { TextField, Button, Typography } from "@material-ui/core";
+import { useDispatch } from "react-redux";
 import { updatePotluck } from "../actions/potlucks";
 import { Card, CardBody, CardHeader } from "reactstrap";
 import ChipInput from 'material-ui-chip-input';
-import { CircularProgress } from "@material-ui/core";
 
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-
-import { Tooltip } from "@material-ui/core";
 
 const Bringing = ({ potluck }) => {
   const [bringerData, setBringerData] = useState({
@@ -72,14 +69,6 @@ const handleChange = (e) => {
 console.log(e)
 checkDuplicate(e)
 }
-
-const handleRequestDelete = (deletedChip) => {
-  setBringerData({
-    bringing: bringerData.filter((c) => c !== deletedChip)
-  })
-}
-
-
 
 
 

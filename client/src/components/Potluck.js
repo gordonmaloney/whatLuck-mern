@@ -1,23 +1,13 @@
-import React, { Component } from "react";
-import Bringing from "./Bringing";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
-import { Button } from "reactstrap";
-import { useDispatch } from "react-redux";
-import { deletePotluck } from "../actions/potlucks";
-import { updatePotluck } from "../actions/potlucks";
 
 const Potluck = ({ potluck }) => {
-  const dispatch = useDispatch();
-
-
- 
-
 
   const Reply = () => {
-    const potluckParent = potluck;
-    const replies = potluck.replies.slice(0,3)
 
+    let replies
+    potluck.replies.length > 3 ? replies = potluck.replies.slice(0,2) : replies = potluck.replies
 
 
     return (
@@ -26,10 +16,7 @@ const Potluck = ({ potluck }) => {
           return (
             <Col xs="12" sm="6" md="4">
               <Card className="bringing-card">
-              
-
-
-                
+               
 
                 <CardHeader>
                   <b>{reply.bringer}</b> is bringing...
@@ -51,7 +38,7 @@ const Potluck = ({ potluck }) => {
           );
         })}
         {potluck.replies.length > 3 ?
-        <Col xs="12"><Card className="bringing-card"><CardBody><em>Open to view more...</em></CardBody></Card> </Col>
+        <Col xs="12" sm="6" md="4"><Card className="bringing-card"><CardBody><em>Open to view more...</em></CardBody></Card> </Col>
         :""}
       </>
     );

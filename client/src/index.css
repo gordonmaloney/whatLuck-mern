@@ -34,6 +34,7 @@ h6,
   text-decoration: none;
   font-weight: 400;
   z-index: 5
+  
 }
 
 @media only screen and (min-width: 768px) {
@@ -97,9 +98,9 @@ body {
   font-size: larger;
   text-decoration: none;
   text-transform: none;
-  width: 80%
-
+  width: 100%
 }
+
 
 .paginationBttns {
   width: 80%;
@@ -238,7 +239,7 @@ body {
 @media only screen and (max-width: 768px) {
   .navbar-btn {
     margin-top: 10px;
-    width: 90%;
+    width: 100%;
   }
   .nav-item {
     margin-top: 5px;
@@ -369,6 +370,7 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   margin-right: 10%;
   width: 30%;
+
   margin-left: auto;
   display: none
 }
@@ -377,8 +379,10 @@ body {
   margin-top: 20px;
   padding-top: 0;
   background-color: rgba(255, 255, 255, 0.5);
-  margin-right: 10%;
+  margin-right: min(15%, 100px);
   width: 30%;
+  min-width: 200px;
+  max-width: 90%;
   margin-left: auto;
 }
 
@@ -409,10 +413,37 @@ body {
   z-index: 0;
   width: 90%
 }
+
 .searchClose :hover {
   cursor: pointer;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  height: 100%
+}
+
+
+
+.dropdownNavlink {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.homeWrapper {
+  height: 85vh;
+}
+
+.dropdown-menu {
+  background-color: #2b2eff;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  align-items: center;
+  text-align: center;
+  border: none;
+  z-index: -2;
+}
+
+.dropdown-menu :hover {
+  background-color: #2b2eff !important;
 }
